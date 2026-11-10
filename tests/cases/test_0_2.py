@@ -1079,7 +1079,7 @@ def test_default_tokenizer_is_declared_and_conforms() -> None:
     tokenizer = default_tokenizer()
     assert isinstance(tokenizer, Tokenizer)
     assert isinstance(tokenizer, StandInTokenizer)
-    assert tokenizer.id == "trina-standin-v1"
+    assert tokenizer.id == "trina-standin@1"
     assert default_tokenizer().id == tokenizer.id
 
 

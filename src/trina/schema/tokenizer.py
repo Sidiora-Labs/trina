@@ -55,7 +55,7 @@ class StandInTokenizer:
 
     @property
     def id(self) -> str:
-        return "trina-standin-v1"
+        return "trina-standin@1"
 
     def _pieces(self, text: str) -> Iterator[int]:
         """Yield the end offset of each token, in order."""
