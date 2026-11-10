@@ -4,7 +4,7 @@ Status: design draft. The [specification](spec.kvx) is normative; all product ve
 
 ## 1. Product and responsibility boundaries
 
-Trina is a Python package that trains and serves three learned stages: a retriever that proposes candidate memories, a set-wise selector that chooses the memories that jointly answer a query, and an assembler that orders and fits them into a token budget. A non-learned baseline for each stage exists first and is reported beside every learned result (decision d_2): BM25, untuned dense and hybrid fusion for retrieval, an untuned off-the-shelf reranker for selection, top-k truncation for assembly. Trina does not answer questions: the reader that consumes the assembled context is outside the product and appears only as the teacher, reader and judge used for labelling and evaluation.
+Trina (Transformer Indexed Activation) is a Python package that trains and serves three learned stages: a retriever that proposes candidate memories earned baseline for each stage exists first and is reported beside every learned result (decision d_2): BM25, untuned dense and hybrid fusion for retrieval, an untuned off-the-shelf reranker for selection, top-k truncation for assembly. Trina does not answer questions: the reader that consumes the assembled context is outside the product and appears only as the teacher, reader and judge used for labelling and evaluation.
 
 | Authority | Owns | Does not establish |
 |---|---|---|

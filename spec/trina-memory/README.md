@@ -2,7 +2,7 @@
 
 Status: **specification authored; no implementation exists; all 28 qualification cases are UNRUN**.
 
-Trina is a training system for a memory-retrieval and context-assembly neural network. It produces three learned stages and the pipeline that serves them: a retriever that proposes candidate memories, a set-wise selector that chooses the memories that jointly answer a query (including none), and an assembler that orders them and fits them into a token budget. A non-learned baseline exists first and is reported beside every learned result.
+Trina (Transformer Indexed Activation) is a training system for a memory-retrieval and context-assembly neural network. It produces three learned stages and the pipeline that serves them: a retriever that proposes candidate memories, a set-wise selector that chooses the memories that jointly answer a query (including none), and an assembler that orders them and fits them into a token budget. A non-learned baseline exists first and is reported beside every learned result.
 
 Training data combines redacted coding-agent trajectories streamed from a source bucket, generated general-memory histories with known evidence, and public retrieval sets. A teacher model supplies utility labels: which memories the reader actually needed. The system is built and smoke-tested on a CPU host and given a test run on one NVIDIA B200. The starting environment is described in [baseline.md](baseline.md); nothing else has been measured.
 

@@ -29,6 +29,7 @@ worktrees  = ".codegraph/worktrees"
 test_gate  = "make test"
 lint_gate  = "make lint"
 pr         = "off"
+# The main supervisor pushes main to origin after each wave lands; workers never push.
 checkpoint = "manual"
 sparse     = "slice"
 
@@ -56,6 +57,7 @@ verified_done   = "A task is done only when hyperfide spec done reruns its verif
 dependencies    = "Python dependencies are declared in pyproject.toml and pinned in uv.lock. Adding one outside a task's stated scope needs a decision Ask first."
 data_boundary   = "Raw bucket objects are never copied into the repository or left on persistent disk. Only redacted, derived records are persisted. The bucket source prefixes are read-only."
 secrets         = "Credentials live only in the ignored files .env and .ssh.creds. They never appear in tracked files, logs, run records, command lines or messages."
+commits         = "A commit subject is short and plain: an imperative summary under 60 characters, then the task tag. No body unless it records a decision. No narration of process, no account of what went wrong, no apologies, jokes or attribution lines."
 evidence        = "The main supervisor records each wave's qualification evidence in the feature qualification.kvx when the wave lands; workers do not edit it."
 spend           = "Teacher calls go through the teacher client with its budget cap. No agent calls a model provider for project data outside it."
 

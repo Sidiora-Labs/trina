@@ -38,5 +38,10 @@
       "Bash(s5cmd:*)",
       "Bash(ssh:*)"
     ]
+  },
+  "includeCoAuthoredBy": false,
+  "attribution": {
+    "commit": "",
+    "pr": ""
   }
 }

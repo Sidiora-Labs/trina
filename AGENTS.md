@@ -16,6 +16,7 @@ This file is a GENERATED pointer to it. Do not hand-edit it; edit `spec/workflow
 - **Dependencies**: Python dependencies are declared in pyproject.toml and pinned in uv.lock. Adding one outside a task's stated scope needs a decision Ask first.
 - **Data Boundary**: Raw bucket objects are never copied into the repository or left on persistent disk. Only redacted, derived records are persisted. The bucket source prefixes are read-only.
 - **Secrets**: Credentials live only in the ignored files .env and .ssh.creds. They never appear in tracked files, logs, run records, command lines or messages.
+- **Commits**: A commit subject is short and plain: an imperative summary under 60 characters, then the task tag. No body unless it records a decision. No narration of process, no account of what went wrong, no apologies, jokes or attribution lines.
 - **Evidence**: The main supervisor records each wave's qualification evidence in the feature qualification.kvx when the wave lands; workers do not edit it.
 - **Spend**: Teacher calls go through the teacher client with its budget cap. No agent calls a model provider for project data outside it.
 
