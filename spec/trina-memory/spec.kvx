@@ -171,7 +171,7 @@ heading = "Implementation Plan: trina-memory"
 
 [task.0.1]
 title = "Project scaffold, toolchain, gates and credential hygiene check"
-status = "pending"
+status = "done"
 wave = 0
 touches = ["pyproject.toml", "uv.lock", ".python-version", "Makefile", ".gitignore", ".hyperfideignore", "src/trina/__init__.py", "src/trina/cli.py", "tests/conftest.py", "tests/cases/test_0_1.py", "scripts/check_hygiene.py", "scripts/record_evidence.py"]
 verify_cmd = "uv run pytest tests/cases/test_0_1.py -q"
@@ -185,7 +185,7 @@ cases = ["TRM-003", "TRM-026"]
 
 [task.0.2]
 title = "Memory, query and assembled-context contract"
-status = "pending"
+status = "done"
 wave = 0
 requires = ["0.1"]
 touches = ["src/trina/schema/**", "tests/cases/test_0_2.py", "tests/fixtures/schema/**"]
@@ -199,7 +199,7 @@ cases = ["TRM-001"]
 
 [task.0.3]
 title = "Configuration resolution and run records"
-status = "pending"
+status = "done"
 wave = 0
 requires = ["0.1"]
 touches = ["src/trina/config/**", "src/trina/runs/**", "configs/base/**", "tests/cases/test_0_3.py"]
@@ -213,7 +213,7 @@ cases = ["TRM-002"]
 
 [task.0.4]
 title = "Secret loading, redaction and residual-secret audit"
-status = "pending"
+status = "done"
 wave = 0
 requires = ["0.1"]
 touches = ["src/trina/security/**", "Makefile", "tests/cases/test_0_4.py", "tests/fixtures/security/**"]

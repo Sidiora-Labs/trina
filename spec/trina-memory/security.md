@@ -42,7 +42,7 @@ Redaction lowers risk; it does not make trace content publishable. Sharing any d
 | Artifact scan | A credential pattern, or a loaded secret value, occurs in produced artifacts under `data/` and `runs/` (the scanner command of task 0.4, wired into `make lint` by that task) | 3.1 |
 | Ignored output | `data/` or `runs/` is not ignored by git or by Hyperfide | Supports 2.1, 3.1 |
 
-Patterns come from the same catalogue as redaction (section 4), so the gate and the redactor cannot drift apart. Fixtures containing synthetic secrets live under `tests/fixtures/security/` and are matched by an explicit, reviewed path exemption with a marker in each file; an exemption anywhere else fails the gate. Case TRM-003 proves the gate fails on a planted credential and on a loosened mode, and passes on the repository.
+Patterns come from the same catalogue as redaction (section 4), so the gate and the redactor cannot drift apart. Fixtures containing synthetic secrets live under `tests/fixtures/security/` and store each one in fragments that the tests join in memory, so no tracked file holds a whole credential shape and the gate exempts no path. Case TRM-003 proves the gate fails on a planted credential and on a loosened mode, and passes on the repository.
 
 ## 4. Redaction (clause 3.2)
 

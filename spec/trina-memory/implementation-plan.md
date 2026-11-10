@@ -8,10 +8,10 @@ Dependencies determine eligibility. Tasks in one wave with no dependency path be
 
 | Task | Wave | Scope | Requires | Owner | Status |
 |---|---:|---|---|---|---|
-| 0.1 | 0 | Project scaffold, toolchain, gates and credential hygiene check | None | foundation | pending |
-| 0.2 | 0 | Memory, query and assembled-context contract | 0.1 | foundation | pending |
-| 0.3 | 0 | Configuration resolution and run records | 0.1 | foundation | pending |
-| 0.4 | 0 | Secret loading, redaction and residual-secret audit | 0.1 | foundation | pending |
+| 0.1 | 0 | Project scaffold, toolchain, gates and credential hygiene check | None | foundation | done |
+| 0.2 | 0 | Memory, query and assembled-context contract | 0.1 | foundation | done |
+| 0.3 | 0 | Configuration resolution and run records | 0.1 | foundation | done |
+| 0.4 | 0 | Secret loading, redaction and residual-secret audit | 0.1 | foundation | done |
 | 1.1 | 1 | Streaming bucket ingestion with snapshot, dedupe and resume | 0.2, 0.3, 0.4 | data | pending |
 | 1.2 | 1 | Episode extraction from agent trajectories | 1.1 | data | pending |
 | 1.3 | 1 | Teacher client with cache, budget cap and host allow-list | 0.2, 0.3, 0.4 | teacher | pending |
@@ -41,7 +41,7 @@ Dependencies determine eligibility. Tasks in one wave with no dependency path be
 
 ## 0.1: Project scaffold, toolchain, gates and credential hygiene check
 
-Status: **pending**. Owner: `foundation`. Dependencies: none.
+Status: **done**. Owner: `foundation`. Dependencies: none.
 
 Implementation scope:
 
@@ -72,7 +72,7 @@ Implementation and qualification obligations:
 
 ## 0.2: Memory, query and assembled-context contract
 
-Status: **pending**. Owner: `foundation`. Dependencies: 0.1.
+Status: **done**. Owner: `foundation`. Dependencies: 0.1.
 
 Implementation scope:
 
@@ -93,7 +93,7 @@ Implementation and qualification obligations:
 
 ## 0.3: Configuration resolution and run records
 
-Status: **pending**. Owner: `foundation`. Dependencies: 0.1.
+Status: **done**. Owner: `foundation`. Dependencies: 0.1.
 
 Implementation scope:
 
@@ -115,7 +115,7 @@ Implementation and qualification obligations:
 
 ## 0.4: Secret loading, redaction and residual-secret audit
 
-Status: **pending**. Owner: `foundation`. Dependencies: 0.1.
+Status: **done**. Owner: `foundation`. Dependencies: 0.1.
 
 Implementation scope:
 

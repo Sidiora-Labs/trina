@@ -1,0 +1,13 @@
+# Base layer of every run (spec/trina-memory/training.md section 2).
+#
+# Layers resolve in order: this directory, a stage file, a host profile, then
+# command-line overrides. A key absent from every layer is an error, so the keys a
+# base cannot know (run.stage, run.dataset_version) are left to the later layers.
+
+# Seeds recorded in every run record (clause 11.1); a layer or an override may
+# replace any of them.
+[seeds]
+global = 20261110
+data_order = 20261111
+init = 20261112
+eval_bootstrap = 20261113
