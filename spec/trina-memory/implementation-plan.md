@@ -10,7 +10,7 @@ Dependencies determine eligibility. Tasks in one wave with no dependency path be
 |---|---:|---|---|---|---|
 | 0.1 | 0 | Project scaffold, toolchain, gates and credential hygiene check | None | foundation | done |
 | 0.2 | 0 | Memory, query and assembled-context contract | 0.1 | foundation | done |
-| 0.3 | 0 | Configuration resolution and run records | 0.1 | foundation | in_progress |
+| 0.3 | 0 | Configuration resolution and run records | 0.1 | foundation | done |
 | 0.4 | 0 | Secret loading, redaction and residual-secret audit | 0.1 | foundation | pending |
 | 1.1 | 1 | Streaming bucket ingestion with snapshot, dedupe and resume | 0.2, 0.3, 0.4 | data | pending |
 | 1.2 | 1 | Episode extraction from agent trajectories | 1.1 | data | pending |
@@ -93,7 +93,7 @@ Implementation and qualification obligations:
 
 ## 0.3: Configuration resolution and run records
 
-Status: **in_progress**. Owner: `foundation`. Dependencies: 0.1.
+Status: **done**. Owner: `foundation`. Dependencies: 0.1.
 
 Implementation scope:
 
