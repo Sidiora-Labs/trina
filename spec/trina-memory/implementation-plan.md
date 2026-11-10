@@ -131,7 +131,7 @@ Canonical cases: TRM-003 (UNRUN), TRM-004 (UNRUN).
 
 Implementation and qualification obligations:
 
-1. Implement a secrets loader that reads the environment and the ignored credential files, returns opaque values that redact themselves in repr, str and logging, and never writes them.
+1. Implement a secrets loader that reads the environment and the ignored credential files, returns opaque values that redact themselves in repr, str and logging, and never writes them. Credential files are ignored and so are absent from task worktrees: locate them through TRINA_SECRETS_DIR, defaulting to the main repository root resolved from git's common directory.
 2. Implement redaction for API keys, cloud and repository tokens, bearer tokens, private keys and password and token assignments, and dropping of IP addresses and installation identifiers, with counts by kind; client headers are dropped entirely.
 3. Implement the residual-secret audit over a sample of records and an artifact scanner exposed as a command; wire it into make lint for produced artifacts, and make it callable by every dataset build.
 4. test_0_4.py uses synthetic secrets only: every pattern is redacted, counts are right, the audit catches a planted secret, and a secret passed through logging and an exception message does not appear in captured output.
