@@ -199,7 +199,7 @@ cases = ["TRM-001"]
 
 [task.0.3]
 title = "Configuration resolution and run records"
-status = "pending"
+status = "in_progress"
 wave = 0
 requires = ["0.1"]
 touches = ["src/trina/config/**", "src/trina/runs/**", "configs/base/**", "tests/cases/test_0_3.py"]
