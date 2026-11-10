@@ -171,7 +171,7 @@ heading = "Implementation Plan: trina-memory"
 
 [task.0.1]
 title = "Project scaffold, toolchain, gates and credential hygiene check"
-status = "in_progress"
+status = "done"
 wave = 0
 touches = ["pyproject.toml", "uv.lock", ".python-version", "Makefile", ".gitignore", ".hyperfideignore", "src/trina/__init__.py", "src/trina/cli.py", "tests/conftest.py", "tests/cases/test_0_1.py", "scripts/check_hygiene.py", "scripts/record_evidence.py"]
 verify_cmd = "uv run pytest tests/cases/test_0_1.py -q"

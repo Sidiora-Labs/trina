@@ -8,7 +8,7 @@ Dependencies determine eligibility. Tasks in one wave with no dependency path be
 
 | Task | Wave | Scope | Requires | Owner | Status |
 |---|---:|---|---|---|---|
-| 0.1 | 0 | Project scaffold, toolchain, gates and credential hygiene check | None | foundation | in_progress |
+| 0.1 | 0 | Project scaffold, toolchain, gates and credential hygiene check | None | foundation | done |
 | 0.2 | 0 | Memory, query and assembled-context contract | 0.1 | foundation | pending |
 | 0.3 | 0 | Configuration resolution and run records | 0.1 | foundation | pending |
 | 0.4 | 0 | Secret loading, redaction and residual-secret audit | 0.1 | foundation | pending |
@@ -41,7 +41,7 @@ Dependencies determine eligibility. Tasks in one wave with no dependency path be
 
 ## 0.1: Project scaffold, toolchain, gates and credential hygiene check
 
-Status: **in_progress**. Owner: `foundation`. Dependencies: none.
+Status: **done**. Owner: `foundation`. Dependencies: none.
 
 Implementation scope:
 
