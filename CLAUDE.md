@@ -13,7 +13,7 @@ This file is a GENERATED pointer to it. Do not hand-edit it; edit `spec/workflow
 - **Task Driven**: Work is driven by the active feature's task list, in wave order, one claimed task per worker.
 - **Supervision**: The main agent plans, assigns, reviews and merges. It does not implement task work; implementation belongs to task workers.
 - **Verified Done**: A task is done only when hyperfide spec done reruns its verify_cmd and it passes. A test that could not reach an external dependency reports SKIPPED and is never a pass. A component passing never certifies a full case.
-- **Dependencies**: Python dependencies are declared in pyproject.toml and pinned in uv.lock. Adding one outside a task's stated scope needs a decision Ask first.
+- **Dependencies**: Python dependencies are declared in pyproject.toml and pinned in uv.lock. A task may add a dependency its declared work needs, in its own branch, even though those two files are outside its touches: keep the set small and prefer the choices proposed in decisions.md. Resolve a lock conflict by rerunning uv lock, never by hand.
 - **Data Boundary**: Raw bucket objects are never copied into the repository or left on persistent disk. Only redacted, derived records are persisted. The bucket source prefixes are read-only.
 - **Secrets**: Credentials live only in the ignored files .env and .ssh.creds. They never appear in tracked files, logs, run records, command lines or messages.
 - **Commits**: A commit subject is short and plain: an imperative summary under 60 characters, then the task tag. No body unless it records a decision. No narration of process, no account of what went wrong, no apologies, jokes or attribution lines.
