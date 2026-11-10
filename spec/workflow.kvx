@@ -32,6 +32,7 @@ pr         = "off"
 # The main supervisor pushes main to origin after each wave lands; workers never push.
 checkpoint = "manual"
 sparse     = "slice"
+waves      = "sequential"
 
 [role.main]
 title  = "Main Supervisor"
@@ -59,6 +60,7 @@ data_boundary   = "Raw bucket objects are never copied into the repository or le
 secrets         = "Credentials live only in the ignored files .env and .ssh.creds. They never appear in tracked files, logs, run records, command lines or messages."
 commits         = "A commit subject is short and plain: an imperative summary under 60 characters, then the task tag. No body unless it records a decision. No narration of process, no account of what went wrong, no apologies, jokes or attribution lines."
 evidence        = "The main supervisor records each wave's qualification evidence in the feature qualification.kvx when the wave lands; workers do not edit it."
+operator        = "Operator-supplied values (teacher prices, rate limits, the spend cap for live tests) are in configs/operator.toml, also named by TRINA_OPERATOR_LAYER. Use it as the last configuration layer for live tests; do not raise an Ask for these."
 spend           = "Teacher calls go through the teacher client with its budget cap. No agent calls a model provider for project data outside it."
 
 [loop]

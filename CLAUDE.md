@@ -18,6 +18,7 @@ This file is a GENERATED pointer to it. Do not hand-edit it; edit `spec/workflow
 - **Secrets**: Credentials live only in the ignored files .env and .ssh.creds. They never appear in tracked files, logs, run records, command lines or messages.
 - **Commits**: A commit subject is short and plain: an imperative summary under 60 characters, then the task tag. No body unless it records a decision. No narration of process, no account of what went wrong, no apologies, jokes or attribution lines.
 - **Evidence**: The main supervisor records each wave's qualification evidence in the feature qualification.kvx when the wave lands; workers do not edit it.
+- **Operator**: Operator-supplied values (teacher prices, rate limits, the spend cap for live tests) are in configs/operator.toml, also named by TRINA_OPERATOR_LAYER. Use it as the last configuration layer for live tests; do not raise an Ask for these.
 - **Spend**: Teacher calls go through the teacher client with its budget cap. No agent calls a model provider for project data outside it.
 
 ## The loop (every session)

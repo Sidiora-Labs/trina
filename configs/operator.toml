@@ -1,0 +1,20 @@
+# Operator layer: values only the operator can give. Layer it last.
+# Prices are US dollars per million tokens, taken from the gateway's pricing
+# record for this model in the source bucket.
+
+[teacher.prices.input]
+"gpt-6.1-sol" = 2.0
+
+[teacher.prices.cached_input]
+"gpt-6.1-sol" = 0.1
+
+[teacher.prices.output]
+"gpt-6.1-sol" = 10.0
+
+[teacher.rate]
+requests_per_minute = 120
+tokens_per_minute = 2000000
+
+# Cap for live tests and pilots. The production campaign (task 4.4) sets its own.
+[teacher.budget]
+cap_usd = 5.0
