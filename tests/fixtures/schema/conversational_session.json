@@ -1,0 +1,36 @@
+{
+  "persona": "p-014",
+  "session": 3,
+  "turns": [
+    {
+      "speaker": "user",
+      "utterance": "We moved to Malmö in June, so the café on Södergatan is my new office.",
+      "said_at": "2026-01-05T18:30:00+01:00",
+      "mood": "cheerful"
+    },
+    {
+      "speaker": "assistant",
+      "utterance": "Noted. Do you still want reminders in Stockholm time?",
+      "said_at": "2026-01-05T18:30:07+01:00"
+    },
+    {
+      "speaker": "user",
+      "utterance": "No, same zone. And I prefer oat milk now 🥛.",
+      "said_at": "2026-01-05T18:31:10+01:00",
+      "mood": "neutral"
+    }
+  ],
+  "facts": [
+    {
+      "statement": "Lives in Malmö since June 2025.",
+      "learned_at": "2026-01-05T18:30:00+01:00",
+      "turn": 0
+    },
+    {
+      "statement": "Prefers oat milk.",
+      "learned_at": "2026-01-05T18:31:10+01:00",
+      "turn": 2,
+      "category": "preference"
+    }
+  ]
+}
