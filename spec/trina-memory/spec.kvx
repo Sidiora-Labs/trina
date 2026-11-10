@@ -185,7 +185,7 @@ cases = ["TRM-003", "TRM-026"]
 
 [task.0.2]
 title = "Memory, query and assembled-context contract"
-status = "in_progress"
+status = "done"
 wave = 0
 requires = ["0.1"]
 touches = ["src/trina/schema/**", "tests/cases/test_0_2.py", "tests/fixtures/schema/**"]
