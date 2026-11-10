@@ -1,0 +1,6 @@
+.env
+.codegraph/
+.ssh.creds
+.hyperfide-backups/
+data/
+runs/

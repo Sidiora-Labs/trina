@@ -1,0 +1,74 @@
+flowchart TB
+    subgraph DATA[Data plane]
+        B[(Source bucket, read-only)] --> ING[Streaming ingestion and redaction]
+        ING --> EP[Episodes: memory items and decision points]
+        GEN[General-memory history generator] --> ASM
+        PUB[Public sets and benchmarks] --> ASM
+        EP --> ASM[Dataset assembly: group splits, leakage checks, manifest]
+        ASM --> DS[(Dataset version)]
+        CAMP[Production dataset and label campaign under the operator cap]
+        PUB -. evaluation-only .-> EVS[(Evaluation-only sets)]
+    end
+
+    subgraph LABEL[Labelling plane]
+        TC[Teacher client: cache, spend cap, host allow-list]
+        TC --> UL[Utility labels: sufficiency, leave-one-out, graded utility, minimal set]
+        UL --> AUD[Label audit]
+        HN[Hard-negative mining]
+    end
+
+    subgraph TRAIN[Training plane]
+        CORE[Shared loop: streaming, mixed precision, checkpoints, resume]
+        CORE --> TR[Retriever trainer]
+        CORE --> TS[Selector trainer]
+        CORE --> TA[Assembler trainer]
+        TR --> BUN[(Versioned model bundle)]
+        TS --> BUN
+        TA --> BUN
+        CORE --> RUN[(Run records)]
+    end
+
+    subgraph PIPE[Inference pipeline]
+        Q[Query: text, scope, reference time, budget, optional time and kind filters] --> ST[Memory store: scope and filters]
+        ST --> BASE[BM25, dense, reciprocal-rank fusion]
+        BASE --> R[Stage 1: retriever candidates]
+        RR[Untuned off-the-shelf reranker: selector baseline and fallback]
+        R -.-> RR
+        R --> S[Stage 2: set-wise selector with no-evidence score]
+        S --> A[Stage 3: budgeted assembler and ordering]
+        A --> CHK{Budget check under declared tokenizer}
+        CHK --> CTX[Assembled context with provenance, abstention flag and degraded flag]
+    end
+
+    subgraph EVAL[Evaluation]
+        H[Harness] --> RD[Reader answers from context]
+        RD --> J[Validated judge]
+        J --> REP[Per-domain report with baselines and ablations]
+    end
+
+    GEN --> TC
+    CAMP --> ASM
+    CAMP --> UL
+    CAMP --> HN
+    DS --> ST
+    DS --> UL
+    DS --> HN
+    BASE --> HN
+    BASE --> UL
+    R -. second labelling round .-> UL
+    UL --> CORE
+    HN --> CORE
+    DS --> CORE
+    BUN --> R
+    BUN --> S
+    BUN --> A
+    CLI[Command line and local HTTP] --> Q
+    H --> Q
+    CTX --> H
+    EVS --> H
+    DS --> H
+    TC --> RD
+    TC --> J
+    CPU[CPU build host: smoke run] --> CORE
+    GPU[B200 host: test run via remote execution] --> CORE
+    REP --> RUN

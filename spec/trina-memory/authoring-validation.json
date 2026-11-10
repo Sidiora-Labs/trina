@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "scope": "specification-authoring",
+  "statement": "This receipt validates specification authoring only. It executes no product gate: no verify_cmd was run and no case status is evidence.",
+  "product_gates_executed": false,
+  "checked_at": "2026-11-10T10:56:21.914976+00:00",
+  "feature": "trina-memory",
+  "spec_sha256": "188ef63f3c467fe14bd9102f608296a599986a66833f7ade3622505253bb2f1d",
+  "requirements": 15,
+  "acceptance_clauses": 72,
+  "tasks": 30,
+  "cases": 28,
+  "waves": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "task_statuses": {
+    "pending": 30
+  },
+  "case_statuses": {
+    "UNRUN": 28
+  },
+  "rendered": false,
+  "strict": true,
+  "errors": [],
+  "warnings": [],
+  "pending_documents": [],
+  "inputs_sha256": {
+    "README.md": "ce1746b891689e7488358fae7c094c714efaf6c6969e529893c00024b22c9bb5",
+    "baseline.md": "9228aa74a923f90f030745420c976e45bf902a297b5cb02377ccfe0ec517f1cf",
+    "data.md": "9ea124e1ea5bbe06608600b659ae24311f61966610f53009e2345086c7a06a6e",
+    "decisions.md": "4f90ecb1c9bf199700e091f4a123c8c9250ba09bb46a7f06ab196074dfae2f4d",
+    "design.body.md": "4c950bb7b1a44f890c89c7974dfffc3739b33bc64f8fbcff579182585ac120d1",
+    "diagrams/architecture.mmd": "1243c8e9f391cd7e3b0d37783cc24999bd2179d9d022ba87074dbc67d761114f",
+    "evaluation.md": "e0f62b42d1983b7b5bb404e294c7e285e8b784fbbbd22a7daa9fce8305799ebc",
+    "implementation-plan.md": "e22f11202fbc462c635f24c3a62262ba0224fcb87c6c93eea50b177f538740da",
+    "labeling.md": "3fa36f8e9eb408e745e4e9773f0d8a951414cde00948bbe7edc5646a1b4a05ea",
+    "models.md": "68a032b020595c5d33192bd2f46978c7de7981ae57fd88cf9ab39b08abd023fc",
+    "qualification.kvx": "edfc1d5823a71cbfab15512fbc0b37c7ff63184e4bc06237cd87c8679c4771dd",
+    "remote-execution.md": "24067bc783e070f4198ca4e6c150d42251492c2165748eb3feb34d2893c0b4cf",
+    "security.md": "487ac336aba46be7540850e186d42a64bd4ef99ca9903613fe4f38e047103c75",
+    "serving.md": "a8511ba9d44b3028b431f97a0e39c051a169c5ccdc24ee6c811ccffb3173d5c1",
+    "spec.kvx": "188ef63f3c467fe14bd9102f608296a599986a66833f7ade3622505253bb2f1d",
+    "tools/test_validate_spec.py": "3771fc5e52d804177bed2376e3e4236e572010935e174b2f2b379c74863f9f92",
+    "tools/validate_spec.py": "2f916065f0962262f438d5041eb808e432c9a27e9eab0a9e36bece7b17e9ebfb",
+    "traceability.md": "d897b2ef59fd077099ec506405ed6ffb3ef541daa5edbea835dad0961a479d07",
+    "training.md": "a0d66653319290bc05705e1525e78b567e1fef164797f4ddf807945dd0796aa2"
+  }
+}
