@@ -34,7 +34,6 @@ EVIDENCE = REPO / "scripts" / "record_evidence.py"
 PYTHON = sys.executable
 
 IGNORES = ".env\n.ssh.creds\ndata/\nruns/\n"
-EXEMPT_MARKER = "# trina-hygiene:" + " synthetic-secrets\n"
 SECRET_BODY = "a1B2c3D4" * 6
 
 
@@ -303,27 +302,13 @@ def test_hygiene_fails_when_an_output_directory_is_not_ignored(tmp_path: Path) -
     assert "hyperfide-ignore runs/: is not ignored by Hyperfide" in result.stdout
 
 
-def test_hygiene_exemption_holds_only_under_the_security_fixtures(tmp_path: Path) -> None:
-    content = EXEMPT_MARKER + synthetic_secrets()["api_key"] + "\n"
-    allowed = make_repo(tmp_path / "allowed")
-    fixtures = allowed / "tests" / "fixtures" / "security"
-    fixtures.mkdir(parents=True)
-    (fixtures / "sample.txt").write_text(content)
-    result = hygiene(allowed)
-    assert result.returncode == 0, output(result)
-
-    refused = make_repo(tmp_path / "refused")
-    (refused / "docs").mkdir()
-    (refused / "docs" / "sample.txt").write_text(content)
-    result = hygiene(refused)
-    assert result.returncode == 1, output(result)
-    assert "exemption docs/sample.txt:1: exemption marker outside" in result.stdout
-
-    unmarked = make_repo(tmp_path / "unmarked")
-    fixtures = unmarked / "tests" / "fixtures" / "security"
+def test_hygiene_exempts_no_path(tmp_path: Path) -> None:
+    """Synthetic secrets are stored in fragments; a whole one fails in a fixture too."""
+    root = make_repo(tmp_path / "repo")
+    fixtures = root / "tests" / "fixtures" / "security"
     fixtures.mkdir(parents=True)
     (fixtures / "sample.txt").write_text(synthetic_secrets()["api_key"] + "\n")
-    result = hygiene(unmarked)
+    result = hygiene(root)
     assert result.returncode == 1, output(result)
     assert "credential-pattern tests/fixtures/security/sample.txt:1: api_key" in result.stdout
 
