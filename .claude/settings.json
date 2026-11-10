@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(pytest:*)",
+      "Bash(make:*)",
+      "Bash(ruff:*)",
+      "Bash(mypy:*)",
+      "Bash(git:*)",
+      "Bash(hyperfide:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(touch:*)",
+      "Bash(chmod:*)",
+      "Bash(stat:*)",
+      "Bash(diff:*)",
+      "Bash(which:*)",
+      "Bash(pwd)",
+      "Bash(cd:*)"
+    ],
+    "deny": [
+      "Read(//root/trina/.env)",
+      "Read(//root/trina/.ssh.creds)",
+      "Bash(cat /root/trina/.env:*)",
+      "Bash(cat /root/trina/.ssh.creds:*)",
+      "Bash(git push:*)",
+      "Bash(git remote:*)",
+      "Bash(s5cmd:*)",
+      "Bash(ssh:*)"
+    ]
+  }
+}
