@@ -2,3 +2,7 @@
 .ssh.creds
 data/
 runs/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
