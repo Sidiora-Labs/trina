@@ -213,7 +213,7 @@ cases = ["TRM-002"]
 
 [task.0.4]
 title = "Secret loading, redaction and residual-secret audit"
-status = "in_progress"
+status = "done"
 wave = 0
 requires = ["0.1"]
 touches = ["src/trina/security/**", "Makefile", "tests/cases/test_0_4.py", "tests/fixtures/security/**"]
