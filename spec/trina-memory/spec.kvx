@@ -3,7 +3,7 @@
 
 [meta]
 feature = "trina-memory"
-name = "Trina memory retrieval and context assembly training system"
+name = "Trina (Transformer Indexed Activation): memory retrieval and context assembly training system"
 version = "0.1.0"
 status = "pending"
 stage = "specification"

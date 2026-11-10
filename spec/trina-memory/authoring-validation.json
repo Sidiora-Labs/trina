@@ -3,9 +3,9 @@
   "scope": "specification-authoring",
   "statement": "This receipt validates specification authoring only. It executes no product gate: no verify_cmd was run and no case status is evidence.",
   "product_gates_executed": false,
-  "checked_at": "2026-11-10T21:53:23.861131+00:00",
+  "checked_at": "2026-11-10T21:54:09.918876+00:00",
   "feature": "trina-memory",
-  "spec_sha256": "9520e1461d06925b98739d4ff2dc74ae065df5842196cffd005876a382978d83",
+  "spec_sha256": "74f5faa60363aa8ad92f8a159e2277b1008db38d135ccf6a427ee57708bb7703",
   "requirements": 15,
   "acceptance_clauses": 72,
   "tasks": 30,
@@ -21,7 +21,8 @@
     7
   ],
   "task_statuses": {
-    "pending": 30
+    "done": 4,
+    "pending": 26
   },
   "case_statuses": {
     "UNRUN": 28
@@ -39,14 +40,14 @@
     "design.body.md": "194f87bf33d79c7240e48f042cf661e566cffda524b4ec72b08dcac750d53bd2",
     "diagrams/architecture.mmd": "1243c8e9f391cd7e3b0d37783cc24999bd2179d9d022ba87074dbc67d761114f",
     "evaluation.md": "e0f62b42d1983b7b5bb404e294c7e285e8b784fbbbd22a7daa9fce8305799ebc",
-    "implementation-plan.md": "f219af4ed5a8be30fa1e64deaea4298028cf39308d586ac229914d4610b16eaa",
+    "implementation-plan.md": "7cb5bf19b8cdfc6a338f0a43b59203f4bf210e8151370b765c9d5202f6ec21f7",
     "labeling.md": "3fa36f8e9eb408e745e4e9773f0d8a951414cde00948bbe7edc5646a1b4a05ea",
     "models.md": "68a032b020595c5d33192bd2f46978c7de7981ae57fd88cf9ab39b08abd023fc",
     "qualification.kvx": "edfc1d5823a71cbfab15512fbc0b37c7ff63184e4bc06237cd87c8679c4771dd",
     "remote-execution.md": "24067bc783e070f4198ca4e6c150d42251492c2165748eb3feb34d2893c0b4cf",
     "security.md": "487ac336aba46be7540850e186d42a64bd4ef99ca9903613fe4f38e047103c75",
     "serving.md": "a8511ba9d44b3028b431f97a0e39c051a169c5ccdc24ee6c811ccffb3173d5c1",
-    "spec.kvx": "9520e1461d06925b98739d4ff2dc74ae065df5842196cffd005876a382978d83",
+    "spec.kvx": "74f5faa60363aa8ad92f8a159e2277b1008db38d135ccf6a427ee57708bb7703",
     "tools/test_validate_spec.py": "3771fc5e52d804177bed2376e3e4236e572010935e174b2f2b379c74863f9f92",
     "tools/validate_spec.py": "2f916065f0962262f438d5041eb808e432c9a27e9eab0a9e36bece7b17e9ebfb",
     "traceability.md": "d897b2ef59fd077099ec506405ed6ffb3ef541daa5edbea835dad0961a479d07",
