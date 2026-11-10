@@ -13,9 +13,8 @@ TRINA_SECRETS_DIR, else the main repository root resolved from git's common
 directory. They are inspected with stat only; their contents are never read.
 
 A matched value is never printed: a finding is file, line, pattern kind and a short
-hash. Files holding synthetic secrets live under tests/fixtures/security/ and carry
-the marker comment "trina-hygiene: synthetic-secrets" on a line of its own; the
-marker anywhere else fails the gate.
+hash. No path is exempt: fixtures holding synthetic secrets store them in fragments
+that the tests join in memory, so no tracked file holds a whole credential shape.
 
 The built-in catalogue is merged with ``trina.security.credential_patterns()`` when
 the package provides it, so the gate and the redactor share one catalogue.
@@ -39,10 +38,6 @@ CREDENTIAL_FILES = (".env", ".ssh.creds")
 OUTPUT_DIRS = ("data", "runs")
 HYPERFIDE_IGNORE = ".hyperfideignore"
 SECRETS_DIR_ENV = "TRINA_SECRETS_DIR"
-EXEMPT_DIR = "tests/fixtures/security/"
-EXEMPT_MARKER_RE = re.compile(
-    r"^[ \t#/*<!-]*trina-hygiene: synthetic-secrets[ \t*/>-]*$", re.MULTILINE
-)
 
 _NAME = r"(?:password|passwd|secret|token|api[_-]?key|access[_-]?key|private[_-]?key)"
 
@@ -216,14 +211,8 @@ def line_of(text: str, offset: int) -> int:
     return text.count("\n", 0, offset) + 1
 
 
-def scan_blob(relative: str, shown: str, data: bytes, patterns: list[Pattern]) -> list[Finding]:
+def scan_blob(shown: str, data: bytes, patterns: list[Pattern]) -> list[Finding]:
     text = data.decode("utf-8", errors="replace")
-    marker = EXEMPT_MARKER_RE.search(text)
-    if marker is not None:
-        if relative.startswith(EXEMPT_DIR):
-            return []
-        location = f"{shown}:{line_of(text, marker.start())}"
-        return [Finding("exemption", location, f"exemption marker outside {EXEMPT_DIR}")]
     found: set[tuple[int, str, str]] = set()
     for pattern in patterns:
         for match in pattern.regex.finditer(text):
@@ -250,11 +239,11 @@ def scan_tracked(root: Path, patterns: list[Pattern]) -> tuple[list[Finding], in
     for relative in tracked:
         path = root / relative
         if path.is_file() and not path.is_symlink():
-            findings += scan_blob(relative, relative, path.read_bytes(), patterns)
+            findings += scan_blob(relative, path.read_bytes(), patterns)
         if relative in changed:
             staged = git(root, "show", f":{relative}")
             if staged.returncode == 0:
-                findings += scan_blob(relative, f"{relative} (staged)", staged.stdout, patterns)
+                findings += scan_blob(f"{relative} (staged)", staged.stdout, patterns)
     return findings, len(tracked)
 
 
