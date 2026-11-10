@@ -1,0 +1,1 @@
+{"filters":{"created_after":"2026-01-01T00:00:00.000000Z","created_before":null,"kinds":["fact","note"]},"id":"sha256:03902a9f0ee0d0a733e73e6905904ee5dce3f0c4507574e46d67be4a7d9b7d32","metadata":{"category":"single_hop"},"reference_time":"2026-01-06T08:00:00.000000Z","schema_version":1,"scope":"tenant-a/session-1","text":"When does the café open?","token_budget":256}
